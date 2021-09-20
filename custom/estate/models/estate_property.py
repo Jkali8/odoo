@@ -1,7 +1,8 @@
 from dateutil.relativedelta import relativedelta
 
 import odoo.fields
-from odoo import fields, models
+from odoo import fields, models, api
+
 
 class estate_property_window(models.Model):
     _name = "estate.property"
@@ -24,3 +25,19 @@ class estate_property_window(models.Model):
     active = odoo.fields.Boolean(default = True)
     state = odoo.fields.Selection([('N','New'),('OR','Offer recieved'),('OA','Offer accepted'),('S','Sold'),('C','Canceled')],
                                   required = True, copy= False, default = 'N')
+    property_type_id = fields.Many2one("estate.property.type", string ="Type")
+    salesperson_id = fields.Many2one("res.partner", string ="Salesman")
+    buyer_id = fields.Many2one("res.users", string = "Buyer",default=lambda self: self.env.user)
+    tag_ids = fields.Many2many("estate.property.tags", string="Tags")
+    offer_ids = fields.One2many("estate.property.offer", "property_id", string="Offers")
+
+    total_area = fields.Float(compute = "_compute_total_area")
+
+    @api.depends("living_area","garden_area")
+    def _compute_total_area(self):
+        for record in self:
+            record.total_area = record.living_area + record.garden_area
+            S
+
+
+
