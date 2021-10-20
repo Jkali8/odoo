@@ -3,11 +3,11 @@
 
     <menuitem id="test_menu_root" name="Real Estate">
         <menuitem id="advertisment_first_level_menu" name="Advertisments">
-            <menuitem id="advertisment_model_menu_action" action="estate_property_window"/>
+            <menuitem id="advertisment_model_menu_action" action="estate_property_action"/>
         </menuitem>
         <menuitem id="house_type_first_level_menu" name="Settings">
-            <menuitem id="house_types_model_menu_action" action="estate_property_type_window"/>
-            <menuitem id="house_tags_model_menu_action" action="estate_property_tags_window"/>
+            <menuitem id="house_types_model_menu_action" action="estate_property_type_action"/>
+            <menuitem id="house_tags_model_menu_action" action="estate_property_tags_action"/>
         </menuitem>
     </menuitem>
 
