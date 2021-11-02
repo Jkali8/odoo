@@ -1,8 +1,8 @@
 {
-    'name': "Estate account",
+    'name': "Estate_account",
     'version': '1.0',
-    'depends': ['base','estate','account'],
+    'depends': ['base','Estate','account'],
     'author': "Author Name",
-    'category': 'Apps',
+    'category': 'App',
 
 }

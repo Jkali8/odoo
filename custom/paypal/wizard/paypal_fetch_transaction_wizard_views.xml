@@ -1,0 +1,22 @@
+<?xml version = "1.0"?>
+<odoo>
+        <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">paypal.fetch.transaction.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Transactions?">
+
+                </form>
+            </field>
+        </record>
+
+        <act_window id="launch_session_wizard"
+                    name="Fetch transactions?"
+                    src_model="paypal.transaction"
+                    res_model="paypal.fetch.transaction.wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+    </data>
+</openerp>
+</odoo>

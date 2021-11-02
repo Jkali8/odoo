@@ -1,0 +1,20 @@
+<?xml version = "1.0"?>
+<odoo>
+    <data>
+        <record id="paypal_transaction_action" model="ir.actions.act_window">
+            <field name="name">Transactions</field>
+            <field name="res_model">paypal.transaction</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+        <record id="paypal_transaction_view" model="ir.ui.view">
+            <field name="name">paypal.transaction.view</field>
+            <field name="model">paypal.transaction</field>
+            <field name="arch" type="xml">
+                <tree string="Channel">
+                    <field name='transaction_id'/>
+                </tree>
+            </field>
+        </record>
+     </data>
+</odoo>
